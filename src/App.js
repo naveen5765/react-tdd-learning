@@ -31,6 +31,8 @@ function App() {
 
     if (number < 20) {
       setResult(LESS_THAN_TWENTY[number]);
+    } else {
+      setResult("twenty");
     }
   };
 
