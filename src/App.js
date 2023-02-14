@@ -5,6 +5,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Number to Word</h1>
+        <input placeholder="Enter a number"></input>
       </header>
     </div>
   );

@@ -8,3 +8,11 @@ test('should render title "Number to Word"', () => {
 
   expect(headerElement).toBeInTheDocument();
 });
+
+test("should render an input field to enter the number", () => {
+  render(<App />);
+
+  const inputElement = screen.getByPlaceholderText("Enter a number");
+
+  expect(inputElement).toBeInTheDocument();
+});
