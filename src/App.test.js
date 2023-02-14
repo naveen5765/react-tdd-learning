@@ -46,3 +46,13 @@ test("should display 'two' when the entered number is 2", () => {
   const result = screen.getByTestId("result");
   expect(result).toHaveTextContent("two");
 });
+
+test("should display 'two' when the entered number is 19", () => {
+  render(<App />);
+
+  const inputElement = screen.getByPlaceholderText("Enter a number");
+  fireEvent.change(inputElement, { target: { value: "19" } });
+
+  const result = screen.getByTestId("result");
+  expect(result).toHaveTextContent("nineteen");
+});

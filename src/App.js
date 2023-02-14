@@ -6,7 +6,29 @@ function App() {
 
   const convertWordToNumber = (event) => {
     const number = event.target.value;
-    const LESS_THAN_TWENTY = ["zero", "one", "two"];
+    const LESS_THAN_TWENTY = [
+      "zero",
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine",
+      "ten",
+      "eleven",
+      "twelve",
+      "thirteen",
+      "fourteen",
+      "fifteen",
+      "sixteen",
+      "seventeen",
+      "eighteen",
+      "nineteen",
+    ];
+
     if (number < 20) {
       setResult(LESS_THAN_TWENTY[number]);
     }
