@@ -4,8 +4,13 @@ import "./App.css";
 function App() {
   const [result, setResult] = useState(null);
 
-  const convertWordToNumber = () => {
-    setResult("zero");
+  const convertWordToNumber = (event) => {
+    const number = event.target.value;
+    if (number === "0") {
+      setResult("zero");
+    } else {
+      setResult("one");
+    }
   };
 
   return (

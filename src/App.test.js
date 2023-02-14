@@ -26,3 +26,13 @@ test("should display 'zero' when the entered numeber is 0", () => {
   const result = screen.getByTestId("result");
   expect(result).toHaveTextContent("zero");
 });
+
+test("should display 'one' when the entered number is 1", () => {
+  render(<App />);
+
+  const inputElement = screen.getByPlaceholderText("Enter a number");
+  fireEvent.change(inputElement, { target: { value: "1" } });
+
+  const result = screen.getByTestId("result");
+  expect(result).toHaveTextContent("one");
+});
