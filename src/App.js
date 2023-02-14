@@ -6,6 +6,9 @@ function App() {
 
   const convertWordToNumber = (event) => {
     const number = event.target.value;
+    let words = [],
+      word,
+      remainder;
     const LESS_THAN_TWENTY = [
       "zero",
       "one",
@@ -29,11 +32,21 @@ function App() {
       "nineteen",
     ];
 
+    const TENTHS_LESS_THAN_HUNDERD = ["zero", "ten", "twenty", "thirty"];
+
     if (number < 20) {
-      setResult(LESS_THAN_TWENTY[number]);
+      word = LESS_THAN_TWENTY[number];
     } else {
-      setResult("twenty");
+      remainder = number % 10;
+      word = TENTHS_LESS_THAN_HUNDERD[Math.floor(number / 10)];
+      if (remainder) {
+        word += " " + LESS_THAN_TWENTY[remainder];
+      }
     }
+
+    words.push(word);
+
+    setResult(words);
   };
 
   return (

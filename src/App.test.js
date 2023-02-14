@@ -66,3 +66,13 @@ test("should display 'twenty' when the entered number is 20", () => {
   const result = screen.getByTestId("result");
   expect(result).toHaveTextContent("twenty");
 });
+
+test("should display 'twenty one' when the entered number is 21", () => {
+  render(<App />);
+
+  const inputElement = screen.getByPlaceholderText("Enter a number");
+  fireEvent.change(inputElement, { target: { value: "21" } });
+
+  const result = screen.getByTestId("result");
+  expect(result).toHaveTextContent("twenty one");
+});
