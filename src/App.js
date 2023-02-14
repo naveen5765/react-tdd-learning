@@ -6,10 +6,9 @@ function App() {
 
   const convertWordToNumber = (event) => {
     const number = event.target.value;
-    if (number === "0") {
-      setResult("zero");
-    } else {
-      setResult("one");
+    const LESS_THAN_TWENTY = ["zero", "one", "two"];
+    if (number < 20) {
+      setResult(LESS_THAN_TWENTY[number]);
     }
   };
 
