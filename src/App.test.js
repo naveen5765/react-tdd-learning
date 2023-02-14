@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import App from "./App";
 
 test('should render title "Number to Word"', () => {
@@ -15,4 +15,14 @@ test("should render an input field to enter the number", () => {
   const inputElement = screen.getByPlaceholderText("Enter a number");
 
   expect(inputElement).toBeInTheDocument();
+});
+
+test("should display 'zero' when the entered numeber is 0", () => {
+  render(<App />);
+
+  const inputElement = screen.getByPlaceholderText("Enter a number");
+  fireEvent.change(inputElement, { target: { value: "0" } });
+
+  const result = screen.getByTestId("result");
+  expect(result).toHaveTextContent("zero");
 });
